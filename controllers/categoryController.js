@@ -1,3 +1,4 @@
+const { where } = require("sequelize")
 const Category = require("../models/categoryModel")
 
 const createCategory = async(req,res)=>{
@@ -35,16 +36,22 @@ const getCategoryByID = async(req,res)=>{
     }
 }
 
-const updateCategory = (req,res)=>{
+const updateCategory = async(req,res)=>{
  try {
-        res.status(200).send({message:"success", })
+    const id = req.params.id
+    const name = req.body.name
+    console.log(name)
+    const categories = await Category.update({name:name}, {where:{id:id}})
+        res.status(200).send({message:"Category Updated Successfully", })
     } catch (error) {
             res.status(500).send({ error: error });
     }
 }
 
-const deleteCategory = (req,res)=>{
+const deleteCategory = async(req,res)=>{
  try {
+    const id = req.params.id
+    const categories =  await Category.destroy({where:{id:id}})
         res.status(200).send({message:"success", })
     } catch (error) {
             res.status(500).send({ error: error });

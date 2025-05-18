@@ -1,4 +1,4 @@
-const { DataTypes, ForeignKeyConstraintError } = require("sequelize");
+const { DataTypes, ForeignKey } = require("sequelize");
 const sequelize = require("../config/db");
 
 const Brand = require('./brandModel')

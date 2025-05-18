@@ -4,6 +4,7 @@ const {DataTypes} = require('sequelize')
 
 
 
+
 const Category = sequelize.define("Category",{
     id:{
         type:DataTypes.INTEGER,
@@ -20,4 +21,5 @@ const Category = sequelize.define("Category",{
     timestamps:false
 })
 
+// Category.hasMany(Product);
 module.exports = Category 
