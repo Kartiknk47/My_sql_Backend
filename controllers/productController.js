@@ -1,5 +1,5 @@
 // const sequelize = require('../config/db');
-const { col } = require('sequelize');
+// const { col } = require('sequelize');
 const Product = require('../models/productModel')
 const Category = require("../models/categoryModel")
 const Brand = require('..//models/brandModel')
@@ -99,5 +99,6 @@ const deleteProduct = async(req,res)=>{
 
 
 module.exports = {
-    createProduct, getAllProducts, getProductByID, updateProduct, deleteProduct, getProductsByCategory, getProductsByBrand
+    createProduct, getAllProducts, getProductByID, updateProduct, deleteProduct,
+    //  getProductsByCategory, getProductsByBrand
 }

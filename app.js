@@ -8,6 +8,7 @@ require('./config/db')
 const brandRoute = require('./route/brandRoute')
 const productRoute = require('./route/productRoute')
 const categoryRoute = require("./route/categoryRoute")
+const userRoute = require("./route/userRoute")
 
 
 const app = express()
@@ -24,6 +25,8 @@ app.get('/', (req,res)=> res.send("Hello World"))
 app.use('/api/brand', brandRoute)
 app.use('/api/product', productRoute)
 app.use("/api/category", categoryRoute)
+app.use("/api/user", userRoute)
+
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}!`);
